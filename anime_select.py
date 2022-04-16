@@ -1,6 +1,9 @@
 import requests
+import os
+from dotenv import load_dotenv
 
-URL = 'https://api.myanimelist.net/v2/anime'
+load_dotenv()
+URL = os.getenv('URL')
 
 response = requests.get(URL)
 print(response.status_code)
